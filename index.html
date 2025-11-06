@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplicity Solar | Clean Energy Made Simple</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #2E7D32;
+            font-weight: 700;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            fill: #4CAF50;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+
+        .nav-menu a:hover {
+            color: #4CAF50;
+        }
+
+        .header-cta {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .header-cta:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #E8F5E9 0%, #FFF9C4 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subheadline {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .hero .tagline {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        /* About / How It Works Section */
+        .about-section {
+            padding: 80px 20px;
+            background: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: #2E7D32;
+            margin-bottom: 50px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: #F1F8E9;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+        }
+
+        .step h3 {
+            font-size: 22px;
+            color: #2E7D32;
+            margin-bottom: 15px;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #E8F5E9 0%, #FFF9C4 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            color: #2E7D32;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 20px;
+            background: #ffffff;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: #F1F8E9;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2E7D32;
+            font-size: 15px;
+        }
+
+        .testimonial-location {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 20px;
+            background: #F1F8E9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+        }
+
+        .contact-card h3 {
+            font-size: 18px;
+            color: #2E7D32;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: #666;
+            font-size: 15px;
+            word-break: break-word;
+        }
+
+        .contact-card a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #2E7D32;
+        }
+
+        /* Footer */
+        footer {
+            background: #2E7D32;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #FFF9C4;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #E8F5E9;
+            font-size: 14px;
+            line-height: 2;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #FFF9C4;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #E8F5E9;
+            font-size: 14px;
+        }
+
+        /* Lead Form Styles */
+        .lead-form-section {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            padding: 60px 20px;
+            margin: 40px 0;
+        }
+
+        .lead-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .lead-form-container h3 {
+            font-size: 28px;
+            color: #2E7D32;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .lead-form-container .form-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        .form-disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .success-message {
+            display: none;
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 2px solid #4CAF50;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .required {
+            color: #f44336;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: slideUp 0.3s;
+        }
+
+        .modal-content h3 {
+            color: #2E7D32;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .modal-close {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .modal-close:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero .subheadline {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .header-contact {
+                justify-content: center;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .lead-form-container {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">☀️</div>
+                    <h1>Simplicity Solar</h1>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#lead-form" class="header-cta">Get Started</a>
+                </nav>
+                <div class="header-contact">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                        <a href="tel:8605108741">(860) 510-8741</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Houston, TX
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Save Up to 40% on Your Electricity Bill</h2>
+            <p class="subheadline">Clean Energy Made Simple.</p>
+            <p class="tagline">Helping Texans save up to 40% on electricity with $0-down solar.</p>
+            <a href="#lead-form" class="cta-button">See If You Qualify for Savings</a>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="about-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="text-center mb-20" style="font-size: 18px; color: #666; max-width: 800px; margin: 0 auto 40px;">
+                Getting started with solar energy is simple. We handle everything from qualification to installation, making your transition to clean energy completely hassle-free.
+            </p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">📋</div>
+                    <h3>Check Your Eligibility</h3>
+                    <p>Answer a few quick questions to see if your home qualifies for solar savings and available incentives in Texas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">🏠</div>
+                    <h3>Free Home Assessment</h3>
+                    <p>Our solar experts will evaluate your property, energy usage, and roof to design the perfect solar system for your needs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">⚡</div>
+                    <h3>Professional Installation</h3>
+                    <p>Certified technicians install your solar panels with $0 down, and you start saving on your electric bill immediately.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">💰</div>
+                    <h3>Start Saving Money</h3>
+                    <p>Enjoy lower monthly energy costs, increased home value, and the peace of mind that comes with clean, renewable energy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Solar Energy?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💵</div>
+                    <h3>Lower Energy Bills</h3>
+                    <p>Reduce your monthly electricity costs by up to 40% and protect yourself from rising utility rates.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Reduce your carbon footprint and contribute to a cleaner, more sustainable future for Texas.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏡</div>
+                    <h3>Increase Home Value</h3>
+                    <p>Solar panels can increase your property value by an average of 4% or more.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>Energy Independence</h3>
+                    <p>Generate your own clean power and reduce reliance on the electrical grid.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Tax Incentives</h3>
+                    <p>Take advantage of federal tax credits and local incentives available for solar installations.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚙️</div>
+                    <h3>Low Maintenance</h3>
+                    <p>Solar panels require minimal upkeep and come with long-term warranties for your peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Simplicity Solar made the entire process incredibly easy. We're now saving over $150 a month on our electric bill, and the installation was completed in just two days!"</p>
+                    <p class="testimonial-author">— Sarah M.</p>
+                    <p class="testimonial-location">Houston, TX</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"I was hesitant at first, but the team walked me through everything. The $0-down option made it affordable, and I'm already seeing the savings. Highly recommend!"</p>
+                    <p class="testimonial-author">— James R.</p>
+                    <p class="testimonial-location">Austin, TX</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Professional, knowledgeable, and friendly. Simplicity Solar delivered on their promise. Our energy bills have dropped significantly, and we love contributing to a cleaner environment."</p>
+                    <p class="testimonial-author">— Maria L.</p>
+                    <p class="testimonial-location">Dallas, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture Form Section -->
+    <section id="lead-form" class="lead-form-section">
+        <div class="container">
+            <div class="lead-form-container">
+                <div id="successMessage" class="success-message">
+                    <h4>✓ Thank you for your submission!</h4>
+                    <p>We've received your information and one of our solar specialists will contact you within 24 hours to discuss your eligibility and next steps.</p>
+                </div>
+                
+                <h3>Check Your Eligibility</h3>
+                <p class="form-subtitle">Fill out the form below to see if you qualify for solar savings</p>
+                
+                <form id="leadForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="(860) 510-8741" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Street Address <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" placeholder="123 Main Street" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City <span class="required">*</span></label>
+                            <input type="text" id="city" name="city" placeholder="Houston" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code <span class="required">*</span></label>
+                            <input type="text" id="zipCode" name="zipCode" placeholder="77002" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="homeOwnership">Do you own your home? <span class="required">*</span></label>
+                        <select id="homeOwnership" name="homeOwnership" required>
+                            <option value="">-- Select One --</option>
+                            <option value="yes">Yes, I own my home</option>
+                            <option value="no">No, I rent</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="electricBill">Average Monthly Electric Bill <span class="required">*</span></label>
+                        <select id="electricBill" name="electricBill" required>
+                            <option value="">-- Select One --</option>
+                            <option value="under-100">Under $100</option>
+                            <option value="100-150">$100 - $150</option>
+                            <option value="150-200">$150 - $200</option>
+                            <option value="200-300">$200 - $300</option>
+                            <option value="over-300">Over $300</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="roofCondition">Roof Condition</label>
+                        <select id="roofCondition" name="roofCondition">
+                            <option value="">-- Select One --</option>
+                            <option value="excellent">Excellent (New or recently replaced)</option>
+                            <option value="good">Good (5-10 years old)</option>
+                            <option value="fair">Fair (10-15 years old)</option>
+                            <option value="needs-replacement">Needs replacement soon</option>
+                            <option value="not-sure">Not sure</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments">Additional Comments or Questions</label>
+                        <textarea id="comments" name="comments" placeholder="Tell us anything else we should know..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Check My Eligibility</button>
+                    
+                    <p class="form-disclaimer">
+                        By submitting this form, you agree to be contacted by Simplicity Solar via phone, email, or text message. 
+                        We respect your privacy and will never share your information with third parties. 
+                        See our <a href="#privacy-policy" style="color: #4CAF50;">Privacy Policy</a> for more details.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="text-center mb-20" style="font-size: 18px; color: #666; max-width: 800px; margin: 0 auto 40px;">
+                Ready to start saving with solar? Contact us today for a free consultation and see if you qualify for solar savings.
+            </p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-card-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:8605108741">(860) 510-8741</a></p>
+                    <p style="font-size: 13px; color: #888; margin-top: 10px;">Central Time</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:simplicitysolartx@gmail.com">simplicitysolartx@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">📍</div>
+                    <h3>Visit Us</h3>
+                    <p>Simplicity Solar</p>
+                    <p>405 Main St Suite 700<br>Houston, TX 77002</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#lead-form" class="cta-button">Check Your Eligibility</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Simplicity Solar</h3>
+                    <p>Clean Energy Made Simple.</p>
+                    <p style="margin-top: 20px;">Helping Texas homeowners transition to affordable, sustainable solar energy with $0-down financing options.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><strong>Simplicity Solar</strong></p>
+                    <p>405 Main St Suite 700</p>
+                    <p>Houston, TX 77002</p>
+                    <p>Phone: (860) 510-8741</p>
+                    <p>Email: simplicitysolartx@gmail.com</p>
+                    <p>Time Zone: Central Time</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#lead-form">Get Started</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <a href="#privacy-policy">Privacy Policy</a>
+                    <a href="#terms-conditions">Terms & Conditions</a>
+                    <p style="margin-top: 20px; font-size: 12px;">Licensed Solar Installer serving Texas homeowners.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Simplicity Solar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>🎉 Success!</h3>
+            <p><strong>Thank you for choosing Simplicity Solar!</strong></p>
+            <p>We've received your information and a solar specialist will contact you within 24 hours to discuss your eligibility and answer any questions.</p>
+            <p>Check your email at <strong><span id="userEmail"></span></strong> for more information.</p>
+            <button class="modal-close" onclick="closeModal()">Got It!</button>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Here you would normally send the data to your backend/CRM
+            // For demonstration, we'll just show the success modal
+            console.log('Form submitted with data:', data);
+            
+            // Show success modal
+            document.getElementById('userEmail').textContent = data.email;
+            document.getElementById('successModal').classList.add('show');
+            
+            // Reset form
+            event.target.reset();
+            
+            // Optional: Send to GoHighLevel, Zapier, or your CRM
+            // Example webhook call (uncomment and update URL):
+            /*
+            fetch('YOUR_WEBHOOK_URL_HERE', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => console.log('Success:', data))
+            .catch((error) => console.error('Error:', error));
+            */
+        }
+        
+        // Close modal function
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('show');
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('successModal');
+            if (event.target === modal) {
+                modal.classList.remove('show');
+            }
+        }
+        
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 3) {
+                    value = '(' + value;
+                } else if (value.length <= 6) {
+                    value = '(' + value.slice(0, 3) + ') ' + value.slice(3);
+                } else {
+                    value = '(' + value.slice(0, 3) + ') ' + value.slice(3, 6) + '-' + value.slice(6, 10);
+                }
+            }
+            e.target.value = value;
+        });
+        
+        // ZIP code validation
+        document.getElementById('zipCode').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').slice(0, 5);
+        });
+        
+        // Smooth scroll with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
