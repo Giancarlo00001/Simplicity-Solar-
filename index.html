@@ -575,6 +575,96 @@
             transform: translateY(-2px);
         }
 
+        /* Legal Document Modals */
+        .legal-modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            animation: fadeIn 0.3s;
+            overflow-y: auto;
+        }
+
+        .legal-modal.show {
+            display: block;
+        }
+
+        .legal-modal-content {
+            background: white;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 90%;
+            animation: slideUp 0.3s;
+            position: relative;
+        }
+
+        .legal-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .legal-modal-close:hover {
+            color: #2E7D32;
+        }
+
+        .legal-modal h2 {
+            color: #2E7D32;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .legal-modal h3 {
+            color: #2E7D32;
+            font-size: 22px;
+            margin: 30px 0 15px;
+        }
+
+        .legal-modal p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .legal-modal ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .legal-modal li {
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -859,9 +949,10 @@
                     <button type="submit" class="submit-button">Check My Eligibility</button>
                     
                     <p class="form-disclaimer">
-                        By submitting this form, you agree to be contacted by Simplicity Solar via phone, email, or text message. 
+                        By submitting this form, you agree to receive text messages or calls from Simplicity Solar regarding your inquiry. You can opt out at any time by replying STOP. Message and data rates may apply.
+                        <br><br>
                         We respect your privacy and will never share your information with third parties. 
-                        See our <a href="#privacy-policy" style="color: #4CAF50;">Privacy Policy</a> for more details.
+                        See our <a href="javascript:void(0)" onclick="openPrivacyModal()" style="color: #4CAF50; text-decoration: underline;">Privacy Policy</a> for more details.
                     </p>
                 </form>
             </div>
@@ -907,7 +998,7 @@
                 <div class="footer-section">
                     <h3>Simplicity Solar</h3>
                     <p>Clean Energy Made Simple.</p>
-                    <p style="margin-top: 20px;">Helping Texas homeowners transition to affordable, sustainable solar energy with $0-down financing options.</p>
+                    <p style="margin-top: 20px;">Simplicity Solar is a Texas-based solar consultation and installation company helping homeowners transition to clean, affordable energy.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Information</h3>
@@ -928,8 +1019,8 @@
                 </div>
                 <div class="footer-section">
                     <h3>Legal</h3>
-                    <a href="#privacy-policy">Privacy Policy</a>
-                    <a href="#terms-conditions">Terms & Conditions</a>
+                    <a href="javascript:void(0)" onclick="openPrivacyModal()">Privacy Policy</a>
+                    <a href="javascript:void(0)" onclick="openTermsModal()">Terms & Conditions</a>
                     <p style="margin-top: 20px; font-size: 12px;">Licensed Solar Installer serving Texas homeowners.</p>
                 </div>
             </div>
@@ -947,6 +1038,114 @@
             <p>We've received your information and a solar specialist will contact you within 24 hours to discuss your eligibility and answer any questions.</p>
             <p>Check your email at <strong><span id="userEmail"></span></strong> for more information.</p>
             <button class="modal-close" onclick="closeModal()">Got It!</button>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="legal-modal">
+        <div class="legal-modal-content">
+            <span class="legal-modal-close" onclick="closePrivacyModal()">&times;</span>
+            
+            <h2>Privacy Policy</h2>
+            
+            <h3>Communication Consent</h3>
+            <p>
+                By submitting your information through our website, you consent to receive SMS or email communications from Simplicity Solar about your solar consultation or related offers. You may opt out at any time by replying STOP to any text message or by contacting us directly.
+            </p>
+            
+            <h3>Information We Collect</h3>
+            <p>
+                We collect information you provide directly to us, including your name, email address, phone number, property address, and other details you submit through our contact forms. This information is used solely to provide you with solar consultation services and respond to your inquiries.
+            </p>
+            
+            <h3>How We Use Your Information</h3>
+            <p>Your information is used to:</p>
+            <ul>
+                <li>Assess your eligibility for solar installation</li>
+                <li>Provide personalized solar consultation services</li>
+                <li>Contact you regarding your inquiry via phone, email, or SMS</li>
+                <li>Send you information about our services and solar incentives</li>
+            </ul>
+            
+            <h3>Information Sharing</h3>
+            <p>
+                We do not sell, trade, or share your personal information with third parties for marketing purposes. Your information is kept confidential and secure.
+            </p>
+            
+            <h3>Your Rights</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Opt out of communications at any time by replying STOP</li>
+                <li>Request access to your personal information</li>
+                <li>Request deletion of your personal information</li>
+                <li>Update or correct your information</li>
+            </ul>
+            
+            <h3>Contact Us</h3>
+            <p>
+                If you have questions about this Privacy Policy or how we handle your information, please contact us:
+            </p>
+            <p><strong>Simplicity Solar</strong><br>
+            405 Main St Suite 700, Houston, TX 77002<br>
+            Email: simplicitysolartx@gmail.com<br>
+            Phone: (860) 510-8741<br>
+            Time Zone: Central Time</p>
+            
+            <p style="margin-top: 30px; font-size: 14px; color: #888;">
+                <em>Last Updated: November 2025</em>
+            </p>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Modal -->
+    <div id="termsModal" class="legal-modal">
+        <div class="legal-modal-content">
+            <span class="legal-modal-close" onclick="closeTermsModal()">&times;</span>
+            
+            <h2>Terms & Conditions</h2>
+            
+            <h3>Acceptance of Terms</h3>
+            <p>
+                By accessing and using this website, you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our website.
+            </p>
+            
+            <h3>Services</h3>
+            <p>
+                Simplicity Solar provides solar consultation and installation services to homeowners in Texas. All services are subject to eligibility requirements, property assessment, and final approval.
+            </p>
+            
+            <h3>Estimates and Quotes</h3>
+            <p>
+                Any estimates, savings projections, or quotes provided are for informational purposes only and are subject to change based on property assessment, energy usage, and other factors. Final pricing and savings will be determined during the consultation process.
+            </p>
+            
+            <h3>Eligibility</h3>
+            <p>
+                Not all properties qualify for solar installation. Eligibility depends on factors including but not limited to: homeownership status, roof condition, property location, credit qualification, and energy usage patterns.
+            </p>
+            
+            <h3>Communications</h3>
+            <p>
+                By submitting your information, you consent to receive communications from Simplicity Solar via phone, email, or SMS. Standard message and data rates may apply. You can opt out at any time.
+            </p>
+            
+            <h3>Limitation of Liability</h3>
+            <p>
+                Simplicity Solar is not liable for any indirect, incidental, or consequential damages arising from the use of our website or services. Our liability is limited to the amount paid for our services.
+            </p>
+            
+            <h3>Contact Information</h3>
+            <p>
+                For questions about these Terms & Conditions, please contact us:
+            </p>
+            <p><strong>Simplicity Solar</strong><br>
+            405 Main St Suite 700, Houston, TX 77002<br>
+            Email: simplicitysolartx@gmail.com<br>
+            Phone: (860) 510-8741</p>
+            
+            <p style="margin-top: 30px; font-size: 14px; color: #888;">
+                <em>Last Updated: November 2025</em>
+            </p>
         </div>
     </div>
 
@@ -994,11 +1193,42 @@
             document.getElementById('successModal').classList.remove('show');
         }
         
+        // Privacy Policy modal functions
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+        
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').classList.remove('show');
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }
+        
+        // Terms & Conditions modal functions
+        function openTermsModal() {
+            document.getElementById('termsModal').classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+        
+        function closeTermsModal() {
+            document.getElementById('termsModal').classList.remove('show');
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }
+        
         // Close modal when clicking outside
         window.onclick = function(event) {
-            const modal = document.getElementById('successModal');
-            if (event.target === modal) {
-                modal.classList.remove('show');
+            const successModal = document.getElementById('successModal');
+            const privacyModal = document.getElementById('privacyModal');
+            const termsModal = document.getElementById('termsModal');
+            
+            if (event.target === successModal) {
+                successModal.classList.remove('show');
+            }
+            if (event.target === privacyModal) {
+                closePrivacyModal();
+            }
+            if (event.target === termsModal) {
+                closeTermsModal();
             }
         }
         
@@ -1025,8 +1255,15 @@
         // Smooth scroll with offset for fixed header
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                
+                // Skip if it's a javascript:void(0) link (for modals)
+                if (href === '#' || this.getAttribute('onclick')) {
+                    return;
+                }
+                
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     const headerOffset = 80;
                     const elementPosition = target.getBoundingClientRect().top;
